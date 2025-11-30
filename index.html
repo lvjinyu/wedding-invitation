@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>黄培真 ♥ 黄贝佳 | 我们的婚礼</title>
+    <title>马剑栋 ♥ 屠晨霞 | 我们的婚礼</title>
     
     <!-- 微信分享配置 -->
-    <meta name="description" content="黄培真 & 黄贝佳 诚邀您见证我们的爱情盛典">
-    <meta property="og:title" content="黄培真 ♥ 黄贝佳 | 我们的婚礼">
-    <meta property="og:description" content="黄培真 & 黄贝佳 诚邀您见证我们的爱情盛典">
+    <meta name="description" content="马剑栋 & 屠晨霞 诚邀您见证我们的爱情盛典">
+    <meta property="og:title" content="马剑栋 ♥ 屠晨霞 | 我们的婚礼">
+    <meta property="og:description" content="马剑栋 & 屠晨霞 诚邀您见证我们的爱情盛典">
     <meta property="og:image" content="./images/share-cover.jpg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <audio src="./LoveStory.mp3" autoplay="true" loop="loop"></audio>
     <!-- 背景图层 -->
     <div class="background-overlay"></div>
     
@@ -42,8 +43,8 @@
                 </svg>
             </div>
             
-            <h1 class="main-title">黄培真 <span class="heart">♥</span> 黄贝佳</h1>
-            <p class="wedding-date">二〇二五年十二月七日</p>
+            <h1 class="main-title">马剑栋 <span class="heart">♥</span> 屠晨霞</h1>
+            <p class="wedding-date">二〇二五年十二月二十二日</p>
             
             <div class="vine-decoration bottom">
                 <svg viewBox="0 0 200 40" class="vine-svg">
@@ -191,8 +192,8 @@
                     </div>
                     <div class="detail-content">
                         <h3>婚礼时间</h3>
-                        <p class="detail-main">2025年12月7日</p>
-                        <p class="detail-sub">星期日 晚6:00</p>
+                        <p class="detail-main">2025年12月22日</p>
+                        <p class="detail-sub">星期一 11:28</p>
                     </div>
                 </div>
                 
@@ -204,10 +205,12 @@
                     </div>
                     <div class="detail-content">
                         <h3>婚礼地点</h3>
-                        <p class="detail-main">上海铂悦酒店</p>
-                        <p class="detail-sub">浦东新区环球金融中心93层</p>
+                        <p class="detail-main">绍兴市越城区沥海街道</p>
+                        <p class="detail-sub">伟明村5组817号</p>
                     </div>
                 </div>
+                <!-- 地图容器 -->
+                <div id="amap-container" style="width: 90%; max-width: 600px; height: 200px; margin: 20px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></div>
             </div>
         </section>
 
@@ -226,9 +229,8 @@
                     </svg>
                 </div>
                 
-                <p class="blessing-text">愿这份美好的爱情</p>
-                <p class="blessing-text">如花常开，如酒愈醇</p>
-                <p class="blessing-note">期待您的莅临，共同见证这美好时刻</p>
+                <p class="blessing-text">日暖风和，假期已定</p>
+                <p class="blessing-note">诚邀您来，同沐此光，共鉴此时</p>
                 
                 <div class="vine-decoration elegant">
                     <svg viewBox="0 0 160 40" class="blessing-vine">
@@ -255,5 +257,40 @@
     </div>
 
     <script src="script.js"></script>
+    <!-- 引入高德地图JS API（替换为你的Key） -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=c741dd512422eabae3d92ac584acac20"></script>
+    
+    <script>
+    // 初始化地图
+    var map = new AMap.Map('amap-container', {
+      zoom: 17, // 缩放级别
+      center: [120.73072582483292, 30.095288035752198], // 地图中心点（经纬度）
+      mapStyle: 'amap://styles/normal' // 地图样式（normal/light/dark等）
+    });
+    
+    // 添加标记点
+    var marker = new AMap.Marker({
+      position: [120.73072582483292, 30.095288035752198], // 标记点位置
+      title: '伟明村西北481米',
+      icon: new AMap.Icon({ // 自定义标记图标（可选）
+        size: new AMap.Size(32, 32),
+        image: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
+        imageSize: new AMap.Size(32, 32)
+      })
+    });
+    map.add(marker);
+    
+    // 添加标记点弹窗（点击显示）
+    marker.on('click', function() {
+      var infoWindow = new AMap.InfoWindow({
+        content: '<div style="padding: 10px;"><h3 style="margin:0;">婚礼场地</h3><p>北京市朝阳区某某酒店宴会厅</p></div>',
+        offset: new AMap.Pixel(0, -30)
+      });
+      infoWindow.open(map, marker.getPosition());
+    });
+    
+    // 地图自适应标记点
+    map.setFitView([marker]);
+    </script>
 </body>
 </html>

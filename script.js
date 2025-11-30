@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof wx !== 'undefined') {
         wx.ready(function() {
             const shareData = {
-                title: '黄培真 ♥ 黄贝佳 | 我们的婚礼',
-                desc: '诚邀您见证我们在云端上海柏悦酒店的爱情盛典 💕',
+                title: '马剑栋 ♥ 屠晨霞 | 我们的婚礼',
+                desc: '诚邀您见证我们的爱情盛典 💕',
                 link: window.location.href,
                 imgUrl: window.location.origin + '/images/share-cover.jpg'
             };
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 页面加载完成处理
     window.addEventListener('load', function() {
-        console.log('黄培真 ♥ 黄贝佳 婚礼请柬加载完成 💕');
+        console.log('马剑栋 ♥ 屠晨霞 婚礼请柬加载完成 💕');
         
         // 预加载关键图片
         const criticalImages = [
