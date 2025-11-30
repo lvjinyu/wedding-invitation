@@ -212,6 +212,18 @@
                 </div>
                 <!-- 地图容器 -->
                 <div id="amap-container" style="width: 90%; max-width: 600px; height: 200px; margin: 20px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></div>
+                  <div style="text-align: center; margin: 20px 0;">
+                    <a href="https://www.amap.com/regeo?lng=120.73072582483292&lat=30.095288035752198&name=%E4%BC%9F%E6%98%8E%E6%9D%91%E8%A5%BF%E5%8C%97481%E7%B1%B3&adcode=" target="_blank" rel="noopener" style="
+                      display: inline-block;
+                      padding: 12px 24px;
+                      background: #ff6b6b;
+                      color: white;
+                      text-decoration: none;
+                      border-radius: 30px;
+                      font-size: 16px;
+                      box-shadow: 0 4px 12px rgba(255,107,107,0.3);
+                    ">打开高德地图导航</a>
+                  </div>
             </div>
         </section>
 
@@ -284,7 +296,7 @@
     // 添加标记点弹窗（点击显示）
     marker.on('click', function() {
       var infoWindow = new AMap.InfoWindow({
-        content: '<div style="padding: 10px;"><h3 style="margin:0;">婚礼场地</h3><p>北京市朝阳区某某酒店宴会厅</p></div>',
+        content: '<div style="padding: 10px;"><h3 style="margin:0;">婚礼场地</h3><p>绍兴市越城区沥海街道伟明村5组817号</p></div>',
         offset: new AMap.Pixel(0, -30)
       });
       infoWindow.open(map, marker.getPosition());
